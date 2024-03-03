@@ -1,16 +1,17 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import QuestionPage from './components/questionpage';
+import AnswerPage from './components/answerpage';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-          Learn React
-       
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<QuestionPage />} />
+        <Route path="/answer" element={<AnswerPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
